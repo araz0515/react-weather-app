@@ -1,0 +1,60 @@
+.Weather {
+  border: 1px solid #dadde1;
+  border-radius: 10px;
+  max-width: 700px;
+  padding: 20px;
+  margin: 100px auto 10px;
+}
+h1.degree {
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 56px;
+}
+
+.Weather li {
+  list-style: none;
+  color: #707579;
+}
+
+div.weather-info {
+  font-size: 12px;
+  padding-top: 6px;
+  padding-left: 9px;
+  line-height: 16px;
+}
+
+.Weather ul {
+  padding: 0;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.ul.date {
+  font-size: 16px;
+}
+
+p {
+  font-size: 16px;
+  position: relative;
+  top: 7px;
+}
+
+img {
+  height: 60px;
+}
+
+.end-column {
+  text-align: right;
+}
+.city-name {
+  text-transform: capitalize;
+}
+
+@media (max-width: 900px) {
+  .end-column {
+    text-align: left;
+  }
+}
