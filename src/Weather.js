@@ -3,8 +3,8 @@ import "./Weather.css";
 import axios from "axios";
 import WeatherData from "./WeatherData";
 
-export default function Weather() {
-  let [city, setCity] = useState(null);
+export default function Weather(props) {
+  let [city, setCity] = useState(props.defaultCity);
   let [weatherData, setWeatherData] = useState({ loaded: false });
 
   function displayTemperature(response) {
@@ -29,6 +29,10 @@ export default function Weather() {
 
   function handleSearch(event) {
     event.preventDefault();
+    search();
+  }
+
+  function search() {
     let apiKey = "ea34ad36f9tbf5ceb9037o7457b5a408";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayTemperature);
@@ -37,7 +41,7 @@ export default function Weather() {
   if (weatherData.loaded) {
     return (
       <div className="Weather">
-        <form onClick={handleSearch}>
+        <form onSubmit={handleSearch}>
           <div className="row">
             <div className="col-md-10">
               <input
@@ -60,9 +64,10 @@ export default function Weather() {
       </div>
     );
   } else {
+    search();
     return (
       <div className="Weather">
-        <form onClick={handleSearch}>
+        <form onSubmit={handleSearch}>
           <div className="row">
             <div className="col-md-10">
               <input
