@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
+import WeatherData from "./WeatherData";
 
 export default function Weather() {
   let [city, setCity] = useState(null);
@@ -56,39 +57,7 @@ export default function Weather() {
             </div>
           </div>
         </form>
-
-        <div className="row pt-4">
-          <div className="col-md-8 ">
-            <div className="row">
-              <div className="col-md-5 d-flex pe-0">
-                <img
-                  src={weatherData.icon}
-                  alt="weather icon"
-                  className="me-2"
-                />
-                <h1 className="degree">
-                  {Math.round(weatherData.temperature)}
-                </h1>
-                <p>˚C | ˚F</p>
-              </div>
-              <div className="col-md-6 weather-info">
-                <ul>
-                  <li>Humidity: {weatherData.humidity}%</li>
-                  <li>Wind: {Math.round(weatherData.wind)} km/h</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-4 end-column ">
-            <h2 className="m-0 city-name">{weatherData.city}</h2>
-            <ul className="lh-sm date">
-              <li>
-                <FormattedDate date={weatherData.date} />
-              </li>
-              <li className="text-capitalize">{weatherData.description}</li>
-            </ul>
-          </div>
-        </div>
+        <WeatherData data={weatherData} />
       </div>
     );
   } else {
