@@ -10,7 +10,7 @@ export default function WeatherForecastDay(props) {
     let temperature = Math.round(props.data.temperature.minimum);
     return `${temperature}˚`;
   }
-  console.log(props.data.time);
+
   function day() {
     let date = new Date(props.data.time * 1000);
     let day = date.getDay();
