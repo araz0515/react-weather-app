@@ -14,6 +14,14 @@ export default function App() {
             rel="noreferrer"
           >
             open-sourced on GitHub
+          </a>{" "}
+          and is{" "}
+          <a
+            href="https://shiny-florentine-8ff28a.netlify.app"
+            target="_blank"
+            rel="noreferrer"
+          >
+            hosted on Netlify
           </a>
         </footer>
       </div>
